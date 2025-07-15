@@ -227,11 +227,21 @@ a:hover {
 
   .resume-button,
   .contact-button {
-    display: block;
-    width: 80%;
-    margin: 15px auto;
-    text-align: center;
-  }
+    display: inline-block;
+  margin: 10px 0;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #7F7FD5, #86A8E7, #91EAE4); /* nice gradient */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
 }
 
 .fade-in {
@@ -243,4 +253,45 @@ a:hover {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+/* 🎯 Contact section unique style */
+#contact {
+  background: rgba(255, 255, 255, 0.85); /* slightly brighter */
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(161, 196, 253, 0.3);
+}
+
+#contact iframe {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(161, 196, 253, 0.3);
+  margin-top: 20px;
+}
+
+#contact iframe {
+  min-height: 600px;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
 }
