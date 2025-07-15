@@ -295,3 +295,44 @@ a:hover {
   opacity: 1;
   transform: scale(1);
 }
+
+.contact-button img.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #2EC866; /* HackerRank green */
+  padding: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: inline-block; 
+   position: relative; /* Needed for pseudo element */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.contact-button:hover img.icon {
+transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 16px rgba(46, 200, 102, 0.8);
+
+}
+.contact-button img.icon::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 50%;
+  border: 2px solid rgba(46, 200, 102, 0.5);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.contact-button:hover img.icon::after {
+  opacity: 1;
+  transform: scale(1.2);
+}
