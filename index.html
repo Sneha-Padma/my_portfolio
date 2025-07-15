@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sneha Padma | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+<!-- SEO -->
+<meta name="description" content="Sneha Padma - Portfolio of an aspiring Frontend Developer and Data Analyst.">
+
+<!-- Social Preview -->
+<meta property="og:title" content="Sneha Padma | Portfolio">
+<meta property="og:description" content="Aspiring Frontend Developer & Data Analyst showcasing projects, resume, and contact.">
+<meta property="og:image" content="https://sneha-padma.github.io/my_portfolio/Sneha.jpg">
+<meta property="og:url" content="https://sneha-padma.github.io/my_portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+
 </head>
 
 <body>
@@ -38,8 +44,8 @@
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
     <ul>
-      <li><strong>CODSOFT Internship Tasks</strong> — Titanic Survival Prediction, Movie Rating Prediction, etc. [<a href="YOUR_GITHUB_REPO_LINK">View on GitHub</a>]</li>
-      <li><strong>Tarot Webpage </strong> — Booking Sessions. [<a href="YOUR_GITHUB_REPO_LINK">View on GitHub</a>]</li>
+      <li><strong>CODSOFT Internship Tasks</strong> — Titanic Survival Prediction, Movie Rating Prediction, Iris Flower Classification. [<a href=" https://lnkd.in/dEixCu-z" target="_blank">View on GitHub</a>]</li>
+      <li><strong>Tarot Webpage </strong> — Booking Sessions. [<a href="https://github.com/Sneha-Padma/Website-Develop.git" target="_blank">View on GitHub</a>]</li>
       <!-- Add more projects here -->
     </ul>
   </section>
@@ -53,16 +59,23 @@
 
 
   <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>Email: padmasneha7@gmail.com</p>
-    <a href="https://www.linkedin.com/in/snehapadma1152588"target="_blank" class="contact-button">
-        Connect on LinkedIn
-    </a>
+  <h2>Contact</h2>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <input type="email" name="_replyto" placeholder="Your Email" required><br><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+    <button type="submit" class="contact-button">Send Message</button>
+  </form>
 
-    <a href="https://github.com/Sneha-Padma" target="_blank" class="contact-button">
-        visit my GitHub
-     </a>
-   </section>    
+  <a href="https://www.linkedin.com/in/snehapadma1152588" target="_blank" class="contact-button">
+    Connect on LinkedIn
+  </a>
+
+  <a href="https://github.com/Sneha-Padma" target="_blank" class="contact-button">
+    Visit my GitHub
+  </a>
+</section>
+   
   <footer>
     <p>© 2025 Sneha Padma. All rights reserved.</p>
   </footer>
@@ -89,6 +102,30 @@
     appearOnScroll.observe(fader);
   });
 </script>
+
+<script>
+  // Hamburger toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('change', function() {
+    if (this.checked) {
+      menu.style.display = 'block';
+    } else {
+      menu.style.display = 'none';
+    }
+  });
+
+  // Close menu on nav link click
+  const navLinks = document.querySelectorAll('.menu a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.checked = false;
+      menu.style.display = 'none';
+    });
+  });
+</script>
+
 
 </body>
 </html>
