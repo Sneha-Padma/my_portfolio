@@ -1,0 +1,155 @@
+<header class="profile-header">
+  <span class="role-badge">Technical Profile</span>
+  <!-- Profile Image -->
+  <div class="profile-image-wrapper">
+    <img src="sneha-tech.jpg" alt="Sneha Padma - Web Developer" class="profile-image">
+  </div>
+  <h1>Sneha Padma</h1>
+  <span class="role-badge">Technical / Web Developer</span>
+  <p>Frontend • JavaScript • React • Next.js • AI Integration</p>
+  <a href="https://www.linkedin.com/in/snehapadma1152588/" class="cta-btn">View LinkedIn Profile</a>
+
+  <a href="Sneha Padma Resume Tech.docx" class="cta-btn">📄 Download Technical Resume</a>
+</header>
+
+<!-- Profile Switch -->
+<section class="profile-switch">
+  <h2>Explore My Professional Profiles</h2>
+  <div class="switch-grid">
+    <a href="data-analyst.html">📊 Data Analyst</a>
+    <a href="technical.html">💻 Technical / Web</a>
+    <a href="index.html">🌐 Combined Portfolio</a>
+  </div>
+</section>
+
+<link rel="stylesheet" href="technical.css"/>
+<body class="tech-theme">
+<!-- Back to Home Button -->
+<section class="profile-cta" style="text-align:center; margin: 20px 0;">
+  <a href="index.html" class="cta-btn">⬅ Back to Home</a>
+</section>
+<section class="profile-about">
+  <h2>About</h2>
+  <p>
+    Entry-level Software / Web Developer with hands-on experience in
+    frontend development and AI-powered web applications.
+    Focused on building responsive, user-centric, and scalable interfaces.
+  </p>
+</section>
+
+<section class="profile-skills" id="skills">
+   <h2>Technical Skills</h2>
+  <div class="skills-container">
+    <button class="skill-box">Python</button>
+    <button class="skill-box">SQL</button>
+    <button class="skill-box">Machine Learning</button>
+    <button class="skill-box">Data Visualization</button>
+    <button class="skill-box">JavaScript</button>
+    <button class="skill-box">React</button>
+    <button class="skill-box">Next.js</button>
+    <button class="skill-box">HTML & CSS</button>
+  </div>
+</section>
+
+
+<section class="profile-projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>💻 AI Chatbot with PDF Upload</h3>
+    <p>
+      Built a chatbot interface using Next.js with PDF parsing
+      and AI-based response generation.
+    </p>
+    <p><strong>Tech:</strong> Next.js, React, PDF.js, Gemini API</p>
+    <a href="https://www.linkedin.com/posts/snehapadma1152588_nextjs-typescript-aichatbot-activity-7356914977431027712-QMVW?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAECmL6IB28JmtJJjSQtpeDAXcor2vEjTGUM&utm_campaign=copy_link]" target="_blank">LinkedIn Video Demo →</a>
+  </div>
+
+  <div class="project-card">
+    <h3>🌐 Tarot Booking Website</h3>
+    <p>
+      Designed a responsive website for session booking
+      with modern UI.
+    </p>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+    <a href="https://sneha-padma.github.io/tarot-website/" target="_blank">Live Demo →</a>
+  </div>
+
+  <div class="project-card">
+    <h3>🧮 Calculator Web Application</h3>
+    <p>
+      Developed a functional calculator with keyboard support
+      and clean UI.
+    </p>
+    <p><strong>Tech:</strong> JavaScript</p>
+    <a href=" https://lnkd.in/dGUjPzaV" target="_blank">GitHub →</a>
+  </div>
+</section>
+  <div class="project-card">
+    <h3>Python Voice Assistant</h3>
+    <p>
+      Built a modular voice assistant using Python with speech recognition and text-to-speech capabilities.
+      Automates everyday tasks like opening applications, playing YouTube videos, telling jokes, announcing time, taking screenshots, and logging events for debugging.
+      Tech: Python, SpeechRecognition, pyttsx3
+    </p>
+    <p><strong>Tech:</strong>Python, SpeechRecognition, pyttsx3</p>
+    <a href=" https://github.com/Sneha-Padma/voice_assistant_project " target="_blank">GitHub →</a>
+  </div>
+</section>
+</section>
+  <div class="project-card">
+    <h3>🌐Responsive WebPage</h3>
+    <p>
+     HTML, CSS, JavaScript for the structure, design & interactivity
+      Lightbox feature for video previews.
+      Dynamic filtering (Gaming, Anime, Short-form).
+      Custom cursor & GSAP animations for smooth user experience
+      Responsive design so it works across devices
+    </p>
+    <p><strong>Tech:</strong>HTML, CSS, JavaScript</p>
+    <a href=" https://lnkd.in/d7rhvfmi " target="_blank">GitHub →</a>
+  </div>
+</section>
+</section>
+  <div class="project-card">
+    <h3>🍽️Interactive Recipe Card</h3>
+    <p>
+     Built a structured layout with recipe title, image, ingredients, steps, and preparation time.
+
+    </p>
+    <p><strong>Tech:</strong>HTML, CSS, JavaScript</p>
+    <a href=" https://github.com/Sneha-Padma/receipe-card" target="_blank">GitHub →</a>
+  </div>
+</section>
+
+<section class="profile-cta">
+  <a href="index.html" class="back-link">⬅ Back to Main Portfolio</a>
+</section>
+
+<!-- === JS for scroll animation === -->
+<script>
+const skillBoxes = document.querySelectorAll('.skill-box');
+const projectCards = document.querySelectorAll('.project-card');
+
+function revealOnScroll(elements) {
+  elements.forEach((el, index) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
+      el.style.transitionDelay = `${index * 0.1}s`; // stagger effect
+    }
+  });
+}
+
+window.addEventListener('scroll', () => {
+  revealOnScroll(skillBoxes);
+  revealOnScroll(projectCards);
+});
+
+window.addEventListener('load', () => {
+  revealOnScroll(skillBoxes);
+  revealOnScroll(projectCards);
+});
+</script>
+</body>
+</html>

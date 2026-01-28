@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sneha Padma | Data Analyst</title>
+  <link rel="stylesheet" href="data-analyst.css">
+</head>
+
+<body class="data-theme">
+
+<header class="profile-header">
+  <div class="profile-img-wrapper">
+    <img src="snehap.jpg" alt="Sneha Padma" class="profile-img">
+  </div>
+
+  <h1>Data Analyst Portfolio</h1>
+  <span class="role-badge">Data Analyst Profile</span>
+
+  <p>Python • SQL • Machine Learning • Data Insights</p>
+
+  <a href="resume-data.pdf" class="cta-btn">
+    📄 Download Data Analyst Resume
+  </a>
+</header>
+
+<!-- Profile Switch -->
+<section class="profile-switch">
+  <h2>Explore My Professional Profiles</h2>
+  <div class="switch-grid">
+    <a href="data-analyst.html">📊 Data Analyst</a>
+    <a href="technical.html">💻 Technical / Web</a>
+    <a href="index.html">🌐 Combined Portfolio</a>
+  </div>
+</section>
+
+<!-- About -->
+<section class="profile-about reveal">
+  <h2>About</h2>
+  <p>
+    Aspiring Data Analyst with hands-on experience in exploratory data analysis,
+    machine learning models, and SQL-based insights.
+    Skilled in transforming raw data into meaningful business conclusions.
+  </p>
+</section>
+
+<!-- Skills -->
+<section class="profile-skills">
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <span>Python</span>
+    <span>SQL</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Scikit-learn</span>
+    <span>Machine Learning</span>
+    <span>EDA</span>
+    <span>Matplotlib</span>
+  </div>
+</section>
+
+<!-- Impact -->
+<section class="profile-impact reveal">
+  <h2>What I Bring as a Data Analyst</h2>
+  <ul>
+    <li>Convert raw data into actionable business insights</li>
+    <li>Identify trends, patterns & anomalies using EDA</li>
+    <li>Build ML models for prediction & classification</li>
+    <li>Create clear visualizations for decision-making</li>
+    <li>Communicate insights to non-technical stakeholders</li>
+  </ul>
+</section>
+
+<!-- Projects -->
+<section class="profile-projects reveal">
+  <h2>Projects</h2>
+
+  <div class="project-card reveal">
+    <img src="images/titanic.png" class="project-img" alt="Titanic Project">
+    <h3>Titanic Survival Prediction</h3>
+    <ul>
+      <li>Performed data cleaning & EDA</li>
+      <li>Applied feature engineering</li>
+      <li>Evaluated ML models using accuracy metrics</li>
+    </ul>
+    <p><strong>Tools:</strong> Python, Pandas, Scikit-learn</p>
+    <a href="https://github.com/..." target="_blank">GitHub →</a>
+  </div>
+
+  <div class="project-card reveal">
+    <img src="images/movie-rating.png" class="project-img" alt="Movie Rating Project">
+    <h3>Movie Rating Prediction</h3>
+    <ul>
+      <li>Built regression-based prediction model</li>
+      <li>Analyzed movie attributes affecting ratings</li>
+    </ul>
+    <p><strong>Tools:</strong> Python, Regression</p>
+    <a href="https://github.com/..." target="_blank">GitHub →</a>
+  </div>
+
+  <div class="project-card reveal">
+    <img src="images/iris.png" class="project-img" alt="Iris Project">
+    <h3>Iris Flower Classification</h3>
+    <ul>
+      <li>Implemented supervised ML algorithms</li>
+      <li>Evaluated model performance</li>
+    </ul>
+    <p><strong>Tools:</strong> Python, Scikit-learn</p>
+    <a href="https://github.com/..." target="_blank">GitHub →</a>
+  </div>
+</section>
+
+<!-- ================= Gender Pay Equality Project ================= -->
+<!-- ================= Gender Pay Equality Project ================= -->
+<section class="project-card reveal">
+
+  <h2 class="project-title">
+    Gender Pay Equality Analysis – Daikibo Industrials
+  </h2>
+  <div class="neon-divider"></div>
+  <p class="project-description">
+    Conducted a gender pay equality analysis across job roles and factory locations
+    using an equality scoring model to identify pay disparities and support
+    ethical HR decision-making.
+  </p>
+
+  <div class="neon-divider"></div>
+  <p>
+    Daikibo Industrials received internal complaints regarding gender-based salary inequality.
+    Equality scores were generated for each role and factory to enable structured analysis.
+  </p>
+
+   <h3>Key Insights</h3>
+
+  <div class="data-cards reveal">
+    <div class="data-card fair">Fair</div>
+    <div class="data-card unfair">Unfair</div>
+    <div class="data-card high">Highly Discriminative</div>
+  </div>
+
+  <div class="neon-divider"></div>
+
+  <h3>Key Insights</h3>
+
+  <!-- ✅ HTML DATA CARDS (REPLACES TABLE IMAGE) -->
+  <div class="data-cards reveal">
+    <div class="data-card fair">Fair</div>
+    <div class="data-card unfair">Unfair</div>
+    <div class="data-card high">Highly Discriminative</div>
+  </div>
+
+  <p class="image-caption">
+    Roles were classified based on equality score thresholds to highlight
+    potential gender-based pay discrimination.
+  </p>
+
+  <h3>Tools & Skills Used</h3>
+  <div class="skill-tags">
+    <span>Excel</span>
+    <span>HR Analytics</span>
+    <span>Data Classification</span>
+    <span>Business Analysis</span>
+  </div>
+
+</section>
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+
+
+<!-- Resume Preview -->
+<section class="profile-resume reveal">
+  <h2>Resume Preview</h2>
+  <iframe src="resume-data.pdf" title="Sneha Padma Resume"></iframe>
+</section>
+
+<!-- Back -->
+<section class="profile-cta">
+  <a href="index.html">⬅ Back to Portfolio</a>
+</section>
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 80) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>

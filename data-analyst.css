@@ -1,0 +1,323 @@
+/* ===============================
+   🌌 GLOBAL THEME
+================================ */
+body.data-theme {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #0b1f2a, #08131c 60%);
+  color: #e6f1ff;
+  line-height: 1.6;
+}
+
+/* ===============================
+   🔷 HEADER
+================================ */
+.neon-divider {
+  width: 100%;
+  height: 1px;
+  margin: 50px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00e5ff,
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+.profile-header {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.profile-img-wrapper {
+  margin-bottom: 22px;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00e5ff;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+.role-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #00e5ff, #6ae3ff);
+  color: #001018;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin: 12px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #00e5ff, #6ae3ff);
+  color: #001018;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.35);
+}
+
+/* ===============================
+   📦 SECTIONS
+================================ */
+section {
+  max-width: 1050px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-left: 4px solid #00e5ff;
+  padding-left: 14px;
+  color: #d9f7ff;
+}
+
+/* ===============================
+   🧠 SKILLS
+================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.skills-grid span {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 14px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.skills-grid span:hover {
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   📊 PROJECT CARDS
+================================ */
+.project-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  padding: 34px;
+  border-radius: 18px;
+  margin: 50px 0;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.project-title {
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  color: #ffd369;
+}
+
+.project-description {
+  font-size: 1.02rem;
+  margin-bottom: 22px;
+  opacity: 0.95;
+}
+
+.logic-list,
+.contribution-list {
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.logic-list li,
+.contribution-list li {
+  margin-bottom: 8px;
+}
+
+/* ===============================
+   🖼️ PROJECT IMAGES
+================================ */
+.project-image img {
+  width: 100%;
+  max-width: 760px;
+  border-radius: 14px;
+  margin-top: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ===============================
+   🧩 IMAGE GALLERY
+================================ */
+.image-gallery {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 35px 0;
+}
+
+.image-gallery img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* ===============================
+   📊 DATA CLASSIFICATION CARDS
+================================ */
+.data-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.data-card {
+  padding: 18px 26px;
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  min-width: 200px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.data-card.fair {
+  background: rgba(0, 200, 83, 0.15);
+  color: #00e676;
+}
+
+.data-card.unfair {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffd54f;
+}
+
+.data-card.high {
+  background: rgba(244, 67, 54, 0.15);
+  color: #ff6f61;
+}
+
+/* ===============================
+   📝 CAPTIONS
+================================ */
+.image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b9d6e3;
+  margin-top: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* ===============================
+   🏷️ SKILL TAGS
+================================ */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  background: linear-gradient(135deg, #ffd369, #ffe7a3);
+  color: #1a1a1a;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   📄 RESUME PDF
+================================ */
+.profile-resume iframe {
+  width: 100%;
+  height: 620px;
+  border-radius: 16px;
+  border: none;
+  margin-top: 25px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* ===============================
+   🔁 PROFILE SWITCH
+================================ */
+.profile-switch {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.switch-grid {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.switch-grid a {
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.switch-grid a:hover {
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   📱 RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 115px;
+    height: 115px;
+  }
+
+  .project-card {
+    padding: 24px;
+  }
+
+  .profile-resume iframe {
+    height: 480px;
+  }
+}
+/* ===============================
+   ✨ SCROLL REVEAL
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
