@@ -29,7 +29,7 @@
   <div class="switch-grid">
     <a href="data-analyst.html">📊 Data Analyst</a>
     <a href="technical.html">💻 Technical / Web</a>
-    <a href="index.html">🌐 Combined Portfolio</a>
+    
   </div>
 </section>
 
@@ -167,33 +167,26 @@
 <!-- ================================================================ -->
 
 
-<!-- Resume Preview -->
-<section class="profile-resume reveal">
-  <h2>Resume Preview</h2>
-  <iframe src="SNEHA PADMA Resume TechAnalyst.docx" title="Sneha Padma Resume"></iframe>
-</section>
+
 
 <!-- Back -->
 <section class="profile-cta">
   <a href="index.html">⬅ Back to Portfolio</a>
 </section>
 <script>
-  const reveals = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
-  function revealOnScroll() {
-    reveals.forEach(el => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
 
-      if (elementTop < windowHeight - 80) {
-        el.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
+reveals.forEach(el => observer.observe(el));
 </script>
+
 
 </body>
 </html>

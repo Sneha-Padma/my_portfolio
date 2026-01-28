@@ -23,15 +23,8 @@
 
 
 </head>
-<body class="data-theme">
+<body class="dark">
 
-<body>
-
-  <!-- Floating glowing particles -->
-<div class="particle" style="top:20%; left:10%; animation-delay:0s;"></div>
-<div class="particle" style="top:40%; left:80%; animation-delay:2s;"></div>
-<div class="particle" style="top:70%; left:30%; animation-delay:4s;"></div>
-<div class="particle" style="top:60%; left:60%; animation-delay:6s;"></div>
 
  <header>
   <img src="Sneha.jpg" alt="Sneha Padma" class="profile-pic">
@@ -41,7 +34,8 @@
 
 
   <nav>
-  <div class="nav-container">
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  
     
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
@@ -53,15 +47,18 @@
       <a href="#hobbies">Hobbies</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
+      <a href="#achievements">Achievements</a>
+
+
     </div>
-  </div>
+ 
 </nav>
  
 
   <section id="about" class="slide-in">
     <h2>About Me</h2>
     <p>
-    <strong>Final-year Computer Science student of UEM, Kolkata</strong> exploring technology, data, and people — <strong>web projects, solving problems, and growing in data Analyst and HR domains</strong> 
+    <strong>Final-year Computer Science student of UEM, Kolkata</strong> exploring technology, data, and people — <strong>building web projects, solving problems, and growing in data Analytics and HR domains</strong> 
   </p>
   </section>
 
@@ -80,12 +77,6 @@
       <h3>💻 Technical / Frontend</h3>
       <p>React, Next.js, JavaScript, UI Projects</p>
       <a href="technical.html">View Profile →</a>
-    </div>
-
-    <div class="skill-box">
-      <h3>🔀 Hybrid (Tech + Data)</h3>
-      <p>ML + Web + AI integration projects</p>
-      <a href="hybrid.html">View Profile →</a>
     </div>
 
   </div>
@@ -261,6 +252,85 @@
   </a>
 </section>
 
+<!-- ✅ Achievements & Certifications -->
+<section id="achievements" class="fade-in">
+  <h2>🏆 Achievements & Certifications</h2>
+
+  <div class="achievement-container">
+
+    <div class="achievement-card">
+      <h3>SQL Basic</h3>
+      <p><strong>Platform:</strong> HackerRank</p>
+      <p>
+        Completed basic SQL
+      </p>
+      <span class="ach-date">2025</span>
+      <a href="Screenshot 2026-01-28 213919.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+
+    <div class="achievement-card">
+      <h3>Database and SQL for Data Science with Python</h3>
+      <p><strong>Platform:</strong> Coursera</p>
+      <p>
+        Gained hands-on experience with Python, NumPy, Pandas,
+        and data analysis workflows.
+      </p>
+      <span class="ach-date">2024</span>
+      <a href="Screenshot 2026-01-28 213946.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+    <div class="achievement-card">
+      <h3>Entrepreneurship:Finding and Testing Your Business Idea</h3>
+      <p><strong>Platform:</strong> LinkedIn</p>
+      <p>
+        Gained experience of Finding and Testing business idea
+      </p>
+      <span class="ach-date">2024</span>
+      <a href="Screenshot 2026-01-28 214032.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+    <div class="achievement-card">
+      <h3>30 Days Coding Challenge- Achieved Gold</h3>
+      <p><strong>Platform:</strong> Classroom</p>
+      <p>
+        Solving 30 Problem Using Python
+      </p>
+      <span class="ach-date">2024</span>
+      <a href="Screenshot 2026-01-28 213841.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+    <div class="achievement-card">
+      <h3>Certificate of Emerging Venture Excellence</h3>
+      <p><strong>Platform:</strong> Wadhwani Foundation</p>
+      <p>
+        Gained hands-on experience of Marketing strategy,Business Fundamental.
+      </p>
+      <span class="ach-date">2024</span>
+      <a href="Screenshot 2026-01-28 213801.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+    <div class="achievement-card">
+      <h3>Deloitte- Data Analytics on Forage In the Simulation</h3>
+      <p><strong>Platform:</strong> Forage</p>
+      <p>
+        Gained hands-on experience with Excel, Power BI, Tableau.
+      </p>
+      <span class="ach-date">2024</span>
+      <a href="Screenshot 2026-01-28 213740.png" target="_blank" class="ach-btn">
+        📄 View Certificate
+      </a>
+    </div>
+    <!-- Add more cards below -->
+
+  </div>
+</section>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   let counterStarted = false;
@@ -373,6 +443,8 @@ document.addEventListener("DOMContentLoaded", function () {
     📸 Instagram
   </a>
   </div>
+  
+
 </section>
 
 

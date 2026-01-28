@@ -1,3 +1,19 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --nav-bg: rgba(15, 23, 42, 0.85);
+  --nav-text: #e5e7eb;
+  --nav-hover: #38bdf8;
+}
+
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-text: #0f172a;
+  --nav-hover: #2563eb;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -60,30 +76,6 @@ body {
     border-color: #ff00ff;
   }
 }
-
-/* ✨ Floating Particles */
-.particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, #00e6ff, transparent);
-  border-radius: 50%;
-  animation: floatParticle 6s infinite ease-in-out;
-  opacity: 0.8;
-  z-index: 1;
-}
-
-.particle:nth-child(2) { top: 10%; left: 50%; animation-delay: 1s; }
-.particle:nth-child(3) { bottom: 15%; right: 30%; animation-delay: 2s; }
-.particle:nth-child(4) { top: 40%; left: 10%; animation-delay: 3s; }
-.particle:nth-child(5) { bottom: 30%; right: 15%; animation-delay: 4s; }
-
-@keyframes floatParticle {
-  0%   { transform: translateY(0) scale(1); opacity: 0.8; }
-  50%  { transform: translateY(-20px) scale(1.3); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 0.8; }
-}
-
 
 /* Header */
 header {
@@ -219,6 +211,18 @@ header h1, header p {
   width: 80%;
   margin: 20px auto;
 }
+/* ===============================
+   🧭 NAVBAR BASE
+   =============================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
 
 /* ✅ Nav Container */
 .nav-container {
@@ -248,7 +252,8 @@ header h1, header p {
   display: none;
   font-size: 2em;
   cursor: pointer;
-  color: #333;
+  color: var(--nav-text);
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
 }
 
 /* ✅ Desktop menu */
@@ -259,22 +264,29 @@ header h1, header p {
 
 .menu a {
   text-decoration: none;
-  color: #333;
-  padding: 10px;
-  font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  color: var(--nav-text);     /* ✅ visible in both modes */
+  padding: 10px 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  opacity: 0.95;              /* 👈 visible even without hover */
+  text-shadow: 0 0 2px rgba(255,255,255,0.2);
+  transition: all 0.35s ease;
 }
 
+
 .menu a:hover {
-  background: #a1c4fd;
-  color: #fff;
+  background: rgba(56, 189, 248, 0.25);
+  color: var(--nav-hover);
   border-radius: 20px;
+  text-shadow: 0 0 8px var(--nav-hover);
 }
+
 
 /* ✅ Mobile menu */
 @media (max-width: 768px) {
   .menu-icon {
-    display: block; /* show hamburger icon */
+    color: var(--nav-text);
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
   }
 
   .menu {
@@ -283,12 +295,13 @@ header h1, header p {
     position: absolute;
     top: 60px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--nav-bg);
     width: 200px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(161, 196, 253, 0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     padding: 10px 0;
     z-index: 99;
+    backdrop-filter: blur(12px);
   }
 
   #menu-toggle:checked + .menu-icon + .menu {
@@ -299,7 +312,9 @@ header h1, header p {
     margin: 10px 20px;
   }
 }
-
+.menu.open {
+  display: flex;
+}
 
 /* Section styling */
 table {
@@ -566,21 +581,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #00bfff;
-  box-shadow: 0 0 20px #ff69b4;
-  display: block;
-  margin: 0 auto 20px;
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-.profile-pic:hover {
-  box-shadow: 0 0 40px #00bfff, 0 0 60px #ff69b4;
-  transform: scale(1.05);
-}
 
 .resume-button,
 .contact-button {
@@ -1019,10 +1019,7 @@ a:hover {
   --accent: #4da3ff; /* blue = data */
 }
 
-.tech-theme .profile-pic {
-  box-shadow: 0 0 12px rgba(124, 255, 178, 0.4);
-  animation: none;
-}
+
 
 
 /* Use accent */
@@ -1044,9 +1041,76 @@ h1, h2 {
   color: #000;
   font-weight: 600;
 }
-.data-theme { --accent: #4da3ff; }
-.tech-theme { --accent: #7cffb2; }
+
 
 h1, h2 { color: var(--accent); }
 .cta-btn { background: var(--accent); }
 .role-badge { background: var(--accent); }
+
+.theme-btn {
+  background: transparent;
+  border: 2px solid var(--nav-text);
+  color: var(--nav-text);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--nav-hover);
+  color: #fff;
+  box-shadow: 0 0 12px var(--nav-hover);
+}
+
+.achievement-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+#achievements {
+  margin: 80px auto;
+  padding: 40px 20px;
+  max-width: 1100px;
+}
+#achievements h2 {
+  text-shadow: 0 0 10px #ffd700, 0 0 20px rgba(255,215,0,0.6);
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+}
+
+.achievement-card h3 {
+  margin-bottom: 8px;
+  color: #ffd700;
+}
+
+.ach-date {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 6px 0;
+}
+
+.ach-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}

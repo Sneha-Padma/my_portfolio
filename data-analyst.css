@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===============================
    🌌 GLOBAL THEME
 ================================ */
@@ -7,6 +11,20 @@ body.data-theme {
   background: radial-gradient(circle at top left, #0b1f2a, #08131c 60%);
   color: #e6f1ff;
   line-height: 1.6;
+}
+body.data-theme::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  opacity: 0.15;
 }
 
 /* ===============================
@@ -175,11 +193,12 @@ h2 {
   max-width: 340px;
   border-radius: 14px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image-gallery img:hover {
-  transform: scale(1.03);
+  transform: scale(1.06) rotate(0.4deg);
+  box-shadow: 0 20px 60px rgba(0,229,255,0.45);
 }
 
 /* ===============================
@@ -191,6 +210,7 @@ h2 {
   gap: 20px;
   flex-wrap: wrap;
   margin: 30px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .data-card {
@@ -218,7 +238,10 @@ h2 {
   background: rgba(244, 67, 54, 0.15);
   color: #ff6f61;
 }
-
+.data-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.45);
+}
 /* ===============================
    📝 CAPTIONS
 ================================ */
@@ -247,6 +270,30 @@ h2 {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
+}
+.skills-grid span {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-grid span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,229,255,0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.skills-grid span:hover::after {
+  left: 120%;
 }
 
 /* ===============================
@@ -313,11 +360,40 @@ h2 {
 ================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(60px) scale(0.96);
+  filter: blur(6px);
+  transition: 
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
+.project-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, transparent, #00e5ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 80px rgba(0, 229, 255, 0.35);
+}
+
+.project-card:hover::before {
+  opacity: 0.35;
+}
+

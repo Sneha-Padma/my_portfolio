@@ -2,19 +2,24 @@
 // 🌟 Fade-in sections on scroll
 // ===============================
 const sections = document.querySelectorAll("section");
+
 const sectionObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("fade-in");
-      else entry.target.classList.remove("fade-in");
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        sectionObserver.unobserve(entry.target);
+      }
     });
   },
   { threshold: 0.2 }
 );
+
 sections.forEach(section => {
   section.classList.add("fade-section"); // initial hidden
   sectionObserver.observe(section);
 });
+
 
 // ===============================
 // 🍔 Hamburger Menu Toggle
@@ -22,14 +27,16 @@ sections.forEach(section => {
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.querySelector(".menu");
 menuToggle.addEventListener("change", () => {
-  menu.style.display = menuToggle.checked ? "block" : "none";
+  menu.classList.toggle("open", menuToggle.checked);
 });
+
 document.querySelectorAll(".menu a").forEach(link => {
   link.addEventListener("click", () => {
     menuToggle.checked = false;
-    menu.style.display = "none";
+    menu.classList.remove("open");
   });
 });
+
 
 // ===============================
 // 🏆 HackerRank Hackos Counter
@@ -46,7 +53,19 @@ function animateCounter(id, endValue, duration) {
   }
   requestAnimationFrame(updateCounter);
 }
-animateCounter("hackos-counter", 1018, 2000); // change value to your score
+const hackos = document.getElementById("hackos-counter");
+
+if (hackos) {
+  const counterObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animateCounter("hackos-counter", 1018, 2000);
+      counterObserver.disconnect(); // run only once
+    }
+  }, { threshold: 0.5 });
+
+  counterObserver.observe(hackos);
+}
+ 
 
 // ===============================
 // 🎓 Education stagger animation
@@ -104,3 +123,14 @@ const popupObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll(".skill-box").forEach(box => {
   popupObserver.observe(box);
 });
+
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    const isLight = body.getAttribute("data-theme") === "light";
+    body.setAttribute("data-theme", isLight ? "dark" : "light");
+    toggleBtn.textContent = isLight ? "🌙" : "☀️";
+  });
+}
